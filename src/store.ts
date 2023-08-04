@@ -5,7 +5,6 @@ import { produce } from 'immer';
 import { create } from 'zustand';
 
 export type Layer = {
-  //   parentId: string | null;
   children: string[];
 };
 
@@ -22,8 +21,7 @@ type Actions = {
 
 const client = createClient({
   throttle: 16,
-  publicApiKey:
-    'pk_dev_UJeVsugEm0jBO3H9nt4mzYFZJ2E5ptUmxVfV5ArG1ukZ1yPTIDuy-hucTDy767uM',
+  publicApiKey: import.meta.env.VITE_LIVEBLOCKS_PUBLIC_API_KEY || '',
 });
 
 const CHILD_LAYER_ID = 'layer-one';
